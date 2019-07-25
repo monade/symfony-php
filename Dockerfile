@@ -6,3 +6,5 @@ RUN apt-get update && apt-get install -y \
     libmagickwand-dev --no-install-recommends \
     && pecl install imagick \
     && docker-php-ext-enable imagick
+RUN docker-php-ext-install zip pdo pdo_mysql mysqli gd
+RUN pecl install apcu && docker-php-ext-enable apcu
